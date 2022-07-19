@@ -1,0 +1,233 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Resources/theme/theTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Resources/Font/Cactron.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Resources/Scripts/UI/ControlButton.cs" type="Script" id=3]
+[ext_resource path="res://Resources/Scripts/UI/ExitButton.cs" type="Script" id=4]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Player/frame18.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Fire/frame3.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Fire/frame4.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Fire/frame5.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Objects/Menu/Cloud.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Resources/Scripts/UI/StartButton.cs" type="Script" id=10]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Fire/frame0.png" type="Texture" id=11]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Fire/frame6.png" type="Texture" id=12]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Fire/frame2.png" type="Texture" id=13]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Fire/frame7.png" type="Texture" id=14]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Fire/frame1.png" type="Texture" id=15]
+[ext_resource path="res://Resources/Scripts/UI/Multiplayer.cs" type="Script" id=16]
+[ext_resource path="res://Resources/Scripts/UI/CPUStart.cs" type="Script" id=17]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Player/frame16.png" type="Texture" id=18]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Player/frame13.png" type="Texture" id=19]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Player/frame17.png" type="Texture" id=20]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Player/frame14.png" type="Texture" id=21]
+[ext_resource path="res://Resources/Textures/Players/Player1/Fire/Player/frame15.png" type="Texture" id=22]
+[ext_resource path="res://Resources/Scripts/UI/Download.cs" type="Script" id=23]
+[ext_resource path="res://Resources/Scripts/UI/MobileSup.cs" type="Script" id=24]
+[ext_resource path="res://Resources/Textures/UI/exit.png" type="Texture" id=25]
+[ext_resource path="res://Resources/Scripts/UI/ExitControl.cs" type="Script" id=26]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=1]
+size = 47
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=7]
+
+[sub_resource type="DynamicFont" id=6]
+size = 45
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Menu" type="Node2D"]
+
+[node name="Cloud1" parent="." instance=ExtResource( 9 )]
+position = Vector2( 610, 45 )
+
+[node name="Cloud2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 615, 156 )
+
+[node name="Cloud3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 612, 284 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1089, 562 )
+scale = Vector2( 10, 10 )
+frames = SubResource( 2 )
+frame = 2
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 844, 596 )
+scale = Vector2( 8, 8 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+flip_h = true
+
+[node name="UI" type="Control" parent="."]
+
+[node name="MenuSelect" type="Panel" parent="UI"]
+margin_right = 260.0
+margin_bottom = 750.0
+
+[node name="Label" type="Label" parent="UI/MenuSelect"]
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 145.0
+margin_bottom = 41.0
+theme = ExtResource( 1 )
+text = "Cat Fighter"
+
+[node name="MenuButtons" type="VBoxContainer" parent="UI/MenuSelect"]
+margin_top = 219.0
+margin_right = 260.0
+margin_bottom = 344.0
+custom_constants/separation = 10
+
+[node name="Start" type="Button" parent="UI/MenuSelect/MenuButtons"]
+margin_right = 260.0
+margin_bottom = 39.0
+theme = ExtResource( 1 )
+text = "Start"
+script = ExtResource( 10 )
+
+[node name="Controls" type="Button" parent="UI/MenuSelect/MenuButtons"]
+margin_top = 49.0
+margin_right = 260.0
+margin_bottom = 88.0
+theme = ExtResource( 1 )
+text = "Controls"
+script = ExtResource( 3 )
+
+[node name="Exit" type="Button" parent="UI/MenuSelect/MenuButtons"]
+margin_top = 98.0
+margin_right = 260.0
+margin_bottom = 137.0
+theme = ExtResource( 1 )
+text = "Exit"
+script = ExtResource( 4 )
+
+[node name="PopupDialog" type="PopupDialog" parent="UI/MenuSelect"]
+visible = true
+margin_right = 1280.0
+margin_bottom = 750.0
+theme = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="UI/MenuSelect/PopupDialog"]
+margin_left = 350.0
+margin_top = 198.0
+margin_right = 930.0
+margin_bottom = 552.0
+
+[node name="Player1" type="Label" parent="UI/MenuSelect/PopupDialog/Panel"]
+margin_right = 279.0
+margin_bottom = 347.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Player1
+Jump: W
+Left: A
+Right: D
+Punch: F
+Kick: G
+Fireball: H"
+
+[node name="Player2" type="Label" parent="UI/MenuSelect/PopupDialog/Panel"]
+margin_left = 324.0
+margin_right = 580.0
+margin_bottom = 354.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Player2
+Jump: ArrowUp
+Left: ArrowLeft
+Right: ArrowRight
+Punch: period
+Kick: slash
+Fireball: comma"
+
+[node name="TextureButton" type="TextureButton" parent="UI/MenuSelect/PopupDialog/Panel"]
+margin_left = -55.0
+margin_top = -55.0
+margin_right = -5.0
+margin_bottom = -5.0
+texture_normal = ExtResource( 25 )
+texture_pressed = ExtResource( 25 )
+texture_hover = ExtResource( 25 )
+texture_disabled = ExtResource( 25 )
+texture_focused = ExtResource( 25 )
+script = ExtResource( 26 )
+
+[node name="Panel2" type="Panel" parent="UI/MenuSelect/PopupDialog"]
+margin_left = 350.0
+margin_top = 572.0
+margin_right = 680.0
+margin_bottom = 652.0
+
+[node name="MobileSup" type="CheckButton" parent="UI/MenuSelect/PopupDialog/Panel2"]
+margin_right = 64.0
+margin_bottom = 39.0
+rect_scale = Vector2( 2, 2 )
+theme = SubResource( 7 )
+script = ExtResource( 24 )
+
+[node name="Label" type="Label" parent="UI/MenuSelect/PopupDialog/Panel2"]
+margin_left = 120.0
+margin_top = 16.0
+margin_right = 328.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 6 )
+text = "Mobile Support"
+
+[node name="Download" type="Button" parent="UI/MenuSelect"]
+margin_top = 620.0
+margin_right = 260.0
+margin_bottom = 659.0
+theme = ExtResource( 1 )
+text = "Download"
+script = ExtResource( 23 )
+
+[node name="StartPanel" type="Panel" parent="UI"]
+show_behind_parent = true
+margin_left = 270.0
+margin_top = 216.0
+margin_right = 588.0
+margin_bottom = 259.0
+
+[node name="CPU" type="Button" parent="UI/StartPanel"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 158.0
+margin_bottom = 41.0
+theme = ExtResource( 1 )
+text = "1 Player"
+script = ExtResource( 17 )
+
+[node name="Multiplayer" type="Button" parent="UI/StartPanel"]
+margin_left = 160.0
+margin_top = 2.0
+margin_right = 316.0
+margin_bottom = 41.0
+theme = ExtResource( 1 )
+text = "2 Player"
+script = ExtResource( 16 )

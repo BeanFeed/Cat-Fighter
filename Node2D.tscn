@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Objects/Game/Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Textures/Game/platform.png" type="Texture" id=3]
+
+[sub_resource type="CSharpScript" id=2]
+resource_name = "RayCast2D"
+script/source = "using Godot;
+using System;
+
+public class RayCast2D : Godot.RayCast2D
+{
+    // Declare member variables here. Examples:
+    // private int a = 2;
+    // private string b = \"text\";
+
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
+    {
+        
+    }
+
+//  // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(float delta)
+    {
+        GD.Print(IsColliding());      
+    }
+}
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 49, 3 )
+enabled = true
+script = SubResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 141, 59 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 1.90735e-06, 2.38419e-07 )
+scale = Vector2( 0.108108, 0.625 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+visible = false
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Platform" parent="." instance=ExtResource( 1 )]
+position = Vector2( 172, 123 )

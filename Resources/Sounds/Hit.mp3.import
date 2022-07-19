@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hit.mp3-b0bd53c4664d389b90d0030cbf13a464.mp3str"
+
+[deps]
+
+source_file="res://Resources/Sounds/Hit.mp3"
+dest_files=[ "res://.import/Hit.mp3-b0bd53c4664d389b90d0030cbf13a464.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
