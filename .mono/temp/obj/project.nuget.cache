@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "T8AG+/1Tk0BoUrH9mXHv+nmkm9UdPTu9f7MNpnxH1Sj888dnNAMZJnrrb72cApUKplCKWB6mpiHeH3hMBmTA/g==",
+  "dgSpecHash": "DkATKCfKuGsPKtClzaZgS1VZN76h7rCxLG20yCYt2ZbYOFHCyVqwV8bNbtjjktP+hkY9iKhEZcWGa8digCZoqg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Austin\\Documents\\GodotGames\\Cat Fighter\\Cat Fighter.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/austind/Code/Godot/Cat-Fighter/Cat Fighter.csproj",
+  "expectedPackageFiles": [
+    "/home/austind/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.2/microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "/home/austind/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.2/microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

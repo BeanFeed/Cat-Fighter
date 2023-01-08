@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Resources/SpriteFrames/RedPlayer.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Resources/Sounds/Hit.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Resources/Scripts/Game/Players/Player.cs" type="Script" id=44]
+[ext_resource path="res://Resources/Sounds/Punch.mp3" type="AudioStream" id=45]
+[ext_resource path="res://Resources/Sounds/Kick.mp3" type="AudioStream" id=46]
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : hint_color = vec4(1.0);
+uniform float flash_modifier : hint_range(0.0,1.0) = 0.0;
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV);
+	color.rgb = mix(color.rgb, flash_color.rgb, flash_modifier);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = SubResource( 3 )
+shader_param/flash_color = Color( 1, 0.937255, 0, 0.458824 )
+shader_param/flash_modifier = 0.0
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2, 2 )
+
+[sub_resource type="QuadMesh" id=2]
+
+[node name="RedPlayer" type="KinematicBody2D"]
+script = ExtResource( 44 )
+
+[node name="groundDec" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 10 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+material = SubResource( 4 )
+frames = ExtResource( 1 )
+animation = "Idle"
+playing = true
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -7, -14, -9, -12, -9, 15, 5, 15, 5, -12, 3, -14 )
+
+[node name="hitbox" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox"]
+polygon = PoolVector2Array( -7, -14, -9, -12, -9, 15, 5, 15, 5, -12, 3, -14 )
+
+[node name="punchbox" type="Area2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="punchbox"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="punchbox"]
+visible = false
+scale = Vector2( 4, 4 )
+mesh = SubResource( 2 )
+
+[node name="Punch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 45 )
+volume_db = -17.178
+
+[node name="Kick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 46 )
+volume_db = -17.178
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

@@ -1,9 +1,18 @@
-C:\Users\Austin\Documents\GodotGames\Cat Fighter\.mono\temp\bin\ExportDebug\Cat Fighter.dll
-C:\Users\Austin\Documents\GodotGames\Cat Fighter\.mono\temp\bin\ExportDebug\Cat Fighter.pdb
-C:\Users\Austin\Documents\GodotGames\Cat Fighter\.mono\temp\obj\ExportDebug\Cat Fighter.csproj.AssemblyReference.cache
-C:\Users\Austin\Documents\GodotGames\Cat Fighter\.mono\temp\obj\ExportDebug\Cat Fighter.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Austin\Documents\GodotGames\Cat Fighter\.mono\temp\obj\ExportDebug\Cat Fighter.AssemblyInfoInputs.cache
-C:\Users\Austin\Documents\GodotGames\Cat Fighter\.mono\temp\obj\ExportDebug\Cat Fighter.AssemblyInfo.cs
-C:\Users\Austin\Documents\GodotGames\Cat Fighter\.mono\temp\obj\ExportDebug\Cat Fighter.csproj.CoreCompileInputs.cache
-C:\Users\Austin\Documents\GodotGames\Cat Fighter\.mono\temp\obj\ExportDebug\Cat Fighter.dll
-C:\Users\Austin\Documents\GodotGames\Cat Fighter\.mono\temp\obj\ExportDebug\Cat Fighter.pdb
+C:/Users/Austin/Documents/GodotGames/Cat Fighter/.mono/temp/bin/ExportDebug/Cat Fighter.dll
+C:/Users/Austin/Documents/GodotGames/Cat Fighter/.mono/temp/bin/ExportDebug/Cat Fighter.pdb
+C:/Users/Austin/Documents/GodotGames/Cat Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.csproj.AssemblyReference.cache
+C:/Users/Austin/Documents/GodotGames/Cat Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Austin/Documents/GodotGames/Cat Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.AssemblyInfoInputs.cache
+C:/Users/Austin/Documents/GodotGames/Cat Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.AssemblyInfo.cs
+C:/Users/Austin/Documents/GodotGames/Cat Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.csproj.CoreCompileInputs.cache
+C:/Users/Austin/Documents/GodotGames/Cat Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.dll
+C:/Users/Austin/Documents/GodotGames/Cat Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.pdb
+/home/austind/Code/Godot/Cat-Fighter/.mono/temp/bin/ExportDebug/Cat Fighter.dll
+/home/austind/Code/Godot/Cat-Fighter/.mono/temp/bin/ExportDebug/Cat Fighter.pdb
+/home/austind/Code/Godot/Cat-Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.csproj.AssemblyReference.cache
+/home/austind/Code/Godot/Cat-Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.GeneratedMSBuildEditorConfig.editorconfig
+/home/austind/Code/Godot/Cat-Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.AssemblyInfoInputs.cache
+/home/austind/Code/Godot/Cat-Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.AssemblyInfo.cs
+/home/austind/Code/Godot/Cat-Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.csproj.CoreCompileInputs.cache
+/home/austind/Code/Godot/Cat-Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.dll
+/home/austind/Code/Godot/Cat-Fighter/.mono/temp/obj/ExportDebug/Cat Fighter.pdb

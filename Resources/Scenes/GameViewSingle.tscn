@@ -29,14 +29,14 @@ bg_color = Color( 0, 0, 0, 0.607843 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Red",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Blue",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Red",
 "speed": 10.0
 } ]
 
@@ -59,7 +59,7 @@ font_data = ExtResource( 3 )
 size = 23
 font_data = ExtResource( 3 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 25, 25 )
 
 [sub_resource type="RectangleShape2D" id=9]
@@ -145,7 +145,7 @@ position = Vector2( 223.625, 109.625 )
 scale = Vector2( 3.905, 3.905 )
 frames = SubResource( 3 )
 animation = "Blue"
-frame = 1
+frame = 2
 playing = true
 flip_h = true
 
@@ -204,28 +204,28 @@ margin_bottom = 40.0
 script = ExtResource( 19 )
 
 [node name="Joystick" parent="UI/Mobile" instance=ExtResource( 15 )]
-position = Vector2( 137, 612 )
-scale = Vector2( 2.5, 2.5 )
+position = Vector2( 129, 584 )
+scale = Vector2( 3.5, 3.5 )
 
 [node name="Punch" type="TouchScreenButton" parent="UI/Mobile"]
-position = Vector2( 1057, 534 )
-scale = Vector2( 2, 2 )
+position = Vector2( 975, 445 )
+scale = Vector2( 3, 3 )
 normal = ExtResource( 17 )
 pressed = ExtResource( 17 )
-shape = SubResource( 11 )
+shape = SubResource( 8 )
 action = "punchMain"
 
 [node name="Kick" type="TouchScreenButton" parent="UI/Mobile"]
-position = Vector2( 1167, 534 )
-scale = Vector2( 2, 2 )
+position = Vector2( 1130, 445 )
+scale = Vector2( 3, 3 )
 normal = ExtResource( 16 )
 pressed = ExtResource( 16 )
 shape = SubResource( 9 )
 action = "kickMain"
 
 [node name="Fire" type="TouchScreenButton" parent="UI/Mobile"]
-position = Vector2( 1167, 641 )
-scale = Vector2( 2, 2 )
+position = Vector2( 1130, 600 )
+scale = Vector2( 3, 3 )
 normal = ExtResource( 18 )
 pressed = ExtResource( 18 )
 shape = SubResource( 10 )

@@ -72,7 +72,7 @@ position = Vector2( 612, 284 )
 position = Vector2( 1089, 562 )
 scale = Vector2( 10, 10 )
 frames = SubResource( 2 )
-frame = 2
+frame = 5
 playing = true
 flip_h = true
 
@@ -80,7 +80,6 @@ flip_h = true
 position = Vector2( 844, 596 )
 scale = Vector2( 8, 8 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 flip_h = true
 

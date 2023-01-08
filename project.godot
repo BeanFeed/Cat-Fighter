@@ -86,6 +86,10 @@ fireMain={
 
 pointing/emulate_touch_from_mouse=true
 
+[mono]
+
+project/assembly_name="Cat Fighter"
+
 [physics]
 
 common/enable_pause_aware_picking=true

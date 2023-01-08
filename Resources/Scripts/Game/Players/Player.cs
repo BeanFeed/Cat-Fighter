@@ -6,33 +6,33 @@ using System.Collections.Generic;
 public class Player : KinematicBody2D
 {
     [Export]
-    private int speed = 50;
+    protected int speed = 50;
     [Export]
-    private int drag = 3;
+    protected int drag = 3;
     [Export]
-    private int jumpPower = 10;
+    protected int jumpPower = 10;
     [Export]
-    private bool useAltControls = false;
+    protected bool useAltControls = false;
     [Export]
-    private double Accel = 0.5;
-    private protected Dictionary<string, string> mainCtrl = new Dictionary<string, string>();
-    private protected Dictionary<string, string> altCtrl = new Dictionary<string, string>();
-    private protected Dictionary<string, string> ctrl;
-    private protected AnimatedSprite player;
-    private protected AudioStreamPlayer PunchSound;
-    private protected AudioStreamPlayer KickSound;
-    private protected int gravity = Globals.gravity;
-    private protected int health = 100;
-    private protected bool isDead = false;
-    private protected bool isFacingLeft = false;
-    private protected bool justFired = false;
-    private protected Vector2 velocity = new Vector2(0,0);
-    private protected int punches = 0;
-    private protected int kicks = 0;
-    private protected float fireCooldown = 5;
-    private protected float flashTimer = 0;
-    private protected bool justHit = false;
-    private protected float knockback = 0;
+    protected double Accel = 0.5;
+    protected Dictionary<string, string> mainCtrl = new Dictionary<string, string>();
+    protected Dictionary<string, string> altCtrl = new Dictionary<string, string>();
+    protected Dictionary<string, string> ctrl;
+    protected AnimatedSprite player;
+    protected AudioStreamPlayer PunchSound;
+    protected AudioStreamPlayer KickSound;
+    protected int gravity = Globals.gravity;
+    protected int health = 100;
+    protected bool isDead = false;
+    protected bool isFacingLeft = false;
+    protected bool justFired = false;
+    protected Vector2 velocity = new Vector2(0,0);
+    protected int punches = 0;
+    protected int kicks = 0;
+    protected float fireCooldown = 5;
+    protected float flashTimer = 0;
+    protected bool justHit = false;
+    protected float knockback = 0;
     public override void _Ready()
     {
         mainCtrl.Add("Left", "ui_leftMain");
@@ -98,7 +98,7 @@ public class Player : KinematicBody2D
         ((ShaderMaterial)player.Material).SetShaderParam("flash_modifier", 0.472f);
         flashTimer = 0.1f;
     }
-    private protected bool ActionAnimationRunning()
+    protected bool ActionAnimationRunning()
     {
         if (player.Frames.GetFrameCount(player.Animation) != player.Frame + 1 && (player.Animation == "Jump" || player.Animation == "Kick" || player.Animation == "Punch" || player.Animation == "Fire"))
         {
@@ -106,7 +106,7 @@ public class Player : KinematicBody2D
         }
         return false;
     }
-    private protected void HandleAniDir()
+    protected void HandleAniDir()
     {
         if (velocity.x < 0)
         {
@@ -126,7 +126,7 @@ public class Player : KinematicBody2D
             spriteNode.FlipH = false;
         }
     }
-    private virtual protected void HandleMovement(float delta)
+    virtual protected void HandleMovement(float delta)
     {
         if (Input.IsActionPressed(ctrl["Left"]))
         {
@@ -254,7 +254,7 @@ public class Player : KinematicBody2D
         punchbox.Scale = new Vector2(1, 1);
         collider.Disabled = true;
     }
-    private protected void HandleActions()
+    virtual protected void HandleActions()
     {
         var punchbox = GetNode<Area2D>("punchbox");
         var collider = GetNode<CollisionShape2D>("punchbox/CollisionShape2D");
